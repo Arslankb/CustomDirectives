@@ -1,0 +1,44 @@
+<h1 setBackground>This is App Component</h1>
+<div class="container" setBackground>
+  <p>This is a demo HTML content to understand custom attribute directive in angular</p>
+</div>
+
+<div appHeighlight appHover>
+  <p>This is a demo HTML content to understand @HostListner in angular</p>
+</div>
+
+<div class="container" appHostBinding [defaultColor] = "'yellow'" [highlightColor] = "'red'">
+  <p>This is a demo HTML content to understand @HostBinding in angular</p>
+</div>
+<div>
+
+  <!-- ngClass Directive -->
+  <p appAppClass [display] = "{container:false, 'change-font':true}">This is a demo HTML content to understand how to create custom ngClass directive in angular</p>
+</div>
+<div>
+  <p appAppClass [display] = "{container:false, 'change-font':false}">This is a demo HTML content to understand how to create custom ngStyle directive in angular</p>
+</div>
+
+  <!-- ngStyle Directive -->
+
+  <div>
+    <p class="container" appStyle [setStyle]="{backgroundColor: 'pink', color: 'red'}">This is a demo HTML content to understand how to create custom ngStyle directive in angular</p>
+  </div>
+
+
+  <button class="btn btn-notice" (click)="displayNotice()">Show notice</button>
+  <div class="info container-notice" *appCustomStructural="display">
+    <h3>This is important notice!</h3>
+    <p>This is a notice issued fro all website users.</p>
+  </div>
+
+  <!-- ngSwitch Directive -->
+
+  <div class="container" [ngSwitch]="occuptaion">
+    <P *ngSwitchCase = "'teacher'">This Paragraph is displayed when the occupation is teacher</P>
+    <P *ngSwitchCase = "'designer'">This Paragraph is displayed when the occupation is designer</P>
+    <P *ngSwitchCase = "'lawyer'">This Paragraph is displayed when the occupation is lawyer</P>
+    <P *ngSwitchDefault>This Paragraph is displayed when if no case matches switch expression</P>
+  </div>
+
+
